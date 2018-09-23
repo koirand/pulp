@@ -21,7 +21,7 @@ pygmentsUseClasses = true
 
 [[params.nav]]
     name = "Blog"
-    url = "/post/"
+    url = "/blog/"
 
 [[params.nav]]
     name = "Twitter"
