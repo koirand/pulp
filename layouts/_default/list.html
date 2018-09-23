@@ -1,0 +1,14 @@
+{{ define "main"}}
+    <div>
+        {{ range $index, $value := .Pages.GroupByDate "January, 2006" }}
+        {{ if (ne $index 0) }}
+        <hr class="separator">
+        {{ end }}
+        <p class="date">{{ .Key }}</p>
+        {{ range .Pages }}
+            <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+        {{ end }}
+        {{ end }}
+    </div>
+{{ end }}
+

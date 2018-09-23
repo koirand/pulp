@@ -1,0 +1,20 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="{{ .Site.Author }}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}img/favicon.ico">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/markdown.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/syntax-highlight.css">
+    {{ range .Site.Params.custom_css }}
+    <link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}">
+    {{ end }}
+    <title>
+    {{ if eq .Title .Site.Title }}
+        {{ .Site.Title }}
+    {{ else }}
+        {{ .Title }} - {{ .Site.Title }}
+    {{ end }}
+    </title>
+</head>

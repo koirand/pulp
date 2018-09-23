@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    background-color: #EFEFEF;
+    color: #707070;
+    text-align: center;
+    font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+    line-height: 1.5;
+}
+
+header {
+    padding: 30px 0;
+}
+
+footer {
+    font-size: 12px;
+}
+
+hr.separator {
+    width: 10px;
+    margin: 30px auto;
+    border: solid 1px #C9C9C9;
+}
+
+a:link {
+    color: #707070;
+}
+
+a:visited {
+    color: #707070;
+}
+
+a:hover {
+    color: #707070;
+}
+
+a:active {
+    color: #707070;
+}
+
+div.profile {
+    min-height: calc(100vh - 42px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.profile-body {
+    width: 60vw;
+    max-width: 400px;
+    min-width: 300px;
+}
+
+.author {
+    color: #C39F59;
+}
+
+.date {
+    color: #869D38;
+}
+
+div.avatar {
+    position: relative;
+    height: 100px;
+}
+
+div.avatar img {
+    position: absolute;
+    width: 100px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+div.avatar img.avatar-mask {
+    clip-path: circle(48px at center);
+    -webkit-clip-path: circle(48px at center);
+}
+
+div.main {
+    justify-content: center;
+    min-height: calc(100vh - 202px);
+    display: flex;
+}
+
+div.markdown-body {
+    width: 90vw;
+    max-width: 800px;
+    min-width: 300px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
+    margin: 20px auto;
+    padding: 0;
+    list-style: none;
+}
+
