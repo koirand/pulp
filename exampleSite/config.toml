@@ -14,8 +14,8 @@ pygmentsUseClasses = true
         Profiles, backgrounds, favorite things etc.
     """
     publicationYear = "2018"
-    # custom_css = ["css/custom.css"]
-    # custom_js = ["js/custom.js"]
+    # custom_css = ["/css/custom.css"]
+    # custom_js = ["/js/custom.js"]
 
 [[params.nav]]
     name = "Blog"

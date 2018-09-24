@@ -1,11 +1,11 @@
 <footer>
     <p>
         &copy; {{ .Site.Params.publicationYear }} {{ .Site.Params.Author }}. 
-        Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> 
+        Powered by <a href="https://gohugo.io/">Hugo</a>
         using the <a href="https://github.com/koirand/pulp/">pulp</a> theme.
     </p>
 </footer>
-<script src="{{ .Site.BaseURL }}js/main.js"></script>
+<script src="/js/main.js"></script>
 {{- range .Site.Params.custom_js -}}
-<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
+<script src="{{ . }}"></script>
 {{ end }}
