@@ -1,7 +1,7 @@
 {{ define "main"}}
     <div>
         <h1>{{ .Title }}</h1>
-        <p class="date">{{ .Date.Format "January 2, 2006" }}</p>
+        <p class="date">{{ .Date.Format .Site.Params.singlePageDateFormat }}</p>
         <div class="markdown-body">
             {{ .Content }}
         </div>

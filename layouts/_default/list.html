@@ -1,6 +1,6 @@
 {{ define "main"}}
     <div>
-        {{ range $index, $value := .Pages.GroupByDate "January, 2006" }}
+        {{ range $index, $value := .Pages.GroupByDate .Site.Params.listPageDateFormat }}
         {{ if (ne $index 0) }}
         <hr class="separator">
         {{ end }}
