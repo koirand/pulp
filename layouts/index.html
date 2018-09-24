@@ -14,8 +14,8 @@
                 </p>
                 <nav>
                     <ul>
-                        {{ range .Site.Params.Nav }}
-                        <li><a href="{{ .url }}">{{ .name }}</a></li>
+                        {{ range .Site.Menus.main }}
+                        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
                         {{ end }}
                     </ul>
                 </nav>

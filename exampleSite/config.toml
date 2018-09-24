@@ -17,19 +17,19 @@ pygmentsUseClasses = true
     # custom_css = ["/css/custom.css"]
     # custom_js = ["/js/custom.js"]
 
-[[params.nav]]
+[[menu.main]]
     name = "Blog"
     url = "/blog/"
 
-[[params.nav]]
+[[menu.main]]
     name = "Twitter"
     url = "https://twitter.com/username"
 
-[[params.nav]]
+[[menu.main]]
     name = "GitHub"
     url = "https://github.com/username"
 
-[[params.nav]]
+[[menu.main]]
     name = "Email"
     url = "mailto:username@example.com"
 
