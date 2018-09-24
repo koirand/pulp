@@ -8,6 +8,7 @@ pygmentsUseClasses = true
 [params]
     author = "Kazuki Koide"
     avatar = "avatar.jpg"
+    favicon = "favicon.ico"
     discription = """
         I’m a Web Engeneer working in Tokyo.
         I’d like to make products that take people to the future.
@@ -16,8 +17,8 @@ pygmentsUseClasses = true
         follow on Twitter or contact by Email.
     """
     publicationYear = "2018"
-    custom_css = ["css/custom.css"]
-    custom_js = ["js/custom.js"]
+    # custom_css = ["css/custom.css"]
+    # custom_js = ["js/custom.js"]
 
 [[params.nav]]
     name = "Blog"
