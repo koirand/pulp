@@ -6,15 +6,12 @@ pygmentsCodefences = true
 pygmentsUseClasses = true
 
 [params]
-    author = "Kazuki Koide"
+    author = "Your Name"
     avatar = "avatar.jpg"
     favicon = "favicon.ico"
     discription = """
-        I’m a Web Engeneer working in Tokyo.
-        I’d like to make products that take people to the future.
-        Have a look at some of my blog posts.
-        If you have a comment, please feel free to
-        follow on Twitter or contact by Email.
+        Please write anything here.
+        Profiles, backgrounds, favorite things etc.
     """
     publicationYear = "2018"
     # custom_css = ["css/custom.css"]
