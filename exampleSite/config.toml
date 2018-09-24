@@ -2,8 +2,10 @@ baseurl = "https://example.com/"
 title = "Site Title"
 theme = "pulp"
 canonifyurls = true
+hasCJKLanguage = true
 pygmentsCodefences = true
 pygmentsUseClasses = true
+# googleAnalytics = "{your tracking code}"
 
 [params]
     author = "Your Name"
