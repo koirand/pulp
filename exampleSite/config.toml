@@ -21,6 +21,9 @@ pygmentsUseClasses = true
     # custom_css = ["/css/custom.css"]
     # custom_js = ["/js/custom.js"]
 
+[outputs]
+    section = ["JSON", "HTML"]
+
 [[menu.main]]
     name = "Blog"
     url = "/blog/"
