@@ -77,9 +77,11 @@ div.avatar img.avatar-mask {
 }
 
 div.main {
+    display: flex;
     justify-content: center;
     min-height: calc(100vh - 202px);
-    display: flex;
+    min-width: 300px;
+    margin: 0 10px;
 }
 
 div.markdown-body {
@@ -99,3 +101,72 @@ nav ul {
     list-style: none;
 }
 
+div.searchBoxContainer {
+    position: relative;
+    width: 300px;
+    height: 30px;
+    margin: 10px auto 50px auto;
+}
+
+input.searchBox {
+    position: absolute;
+    width: 100%;
+    padding: 0 35px 0 15px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    outline: 0;
+    font-size: 15px;
+    color: #707070;
+    background-color:#f6f6f6;
+    border: solid 1px #c9c9c9;
+    box-sizing: border-box;
+}
+
+input.searchBox::placeholder {
+    color: #c9c9c9;
+}
+
+div.searchResults {
+    display: none;
+    position: absolute;
+    max-width: 600px;
+    min-width: 300px;
+    margin: 0 auto;
+    top: 210px;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    background-color:#f6f6f6;
+    border: solid 1px #c9c9c9;
+    border-radius: 5px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+div.searchResultPage {
+    padding: 20px
+}
+
+div.searchResultTitle {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+div.searchResultBody {
+    font-size: 14px;
+}
+
+img.searchBoxIcon {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 5px;
+    right: 10px;
+}
+
+mark {
+    background-color: #dddfdf;
+}
