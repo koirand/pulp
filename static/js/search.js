@@ -42,7 +42,6 @@ function search (query) {
  * Setup UI for Search
  */
 function initUI () {
-
   // Clear query when clear icon is clicked
   $('#searchBoxIcon').click(function () {
     $('#searchBox').val('')
@@ -101,7 +100,7 @@ function renderResults (results) {
   results.slice(0, MAX_PAGES).forEach(function (result, idx) {
     var $searchResultPage = $('<div class="searchResultPage">')
     var metadata = lunrResult[idx].matchData.metadata
-    var matchPosition = metadata[Object.keys(metadata)[0]].body.position[0][0]
+    var matchPosition = metadata[Object.keys(metadata)[0]].body ? metadata[Object.keys(metadata)[0]].body.position[0][0] : 0
     var bodyStartPosition = (matchPosition - (BODY_LENGTH / 2) > 0) ? matchPosition - (BODY_LENGTH / 2) : 0
 
     $searchResultPage.append('<a class="searchResultTitle" href="' + result.ref + '">' + result.title + '</a>')
@@ -119,4 +118,3 @@ initLunr()
 $(function () {
   initUI()
 })
-
