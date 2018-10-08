@@ -3,9 +3,9 @@
 Pulp is a theme of Hugo framework for realize simple and readable personal blogs.
 
 ## Screenshots
-![screenshot-home](https://user-images.githubusercontent.com/17229643/45954234-6dac0080-c047-11e8-8e61-656888176c16.png)
-![screenshot-list](https://user-images.githubusercontent.com/17229643/45954251-78669580-c047-11e8-8256-ea83632032d6.png)
-![screenshot-page](https://user-images.githubusercontent.com/17229643/45954272-87e5de80-c047-11e8-95ba-65e8c1fcabc6.png)
+![screenshot-home](https://user-images.githubusercontent.com/17229643/46608823-fd21db00-cb40-11e8-8104-ee2591751df3.png)
+![screenshot-list](https://user-images.githubusercontent.com/17229643/46608830-01e68f00-cb41-11e8-8218-bd9763955edc.png)
+![screenshot-page](https://user-images.githubusercontent.com/17229643/46608833-0448e900-cb41-11e8-80a5-7da9d8838911.png)
 
 ## Install and Use theme
 1. Inside the folder of your Hugo site run:
