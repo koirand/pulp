@@ -66,7 +66,7 @@ function initUI () {
 function renderResults (results) {
   var $searchResults = $('#searchResults')
   var query = $('#searchBox').val()
-  var SUMMARY_INCLUDE = 100
+  var SUMMARY_INCLUDE = 50
   var MAX_PAGES = 10
 
   // Clear search result
@@ -84,7 +84,7 @@ function renderResults (results) {
     var matchPosition = result.body.indexOf(query.split(' ')[0])
     var bodyStartPosition = matchPosition - SUMMARY_INCLUDE > 0 ? matchPosition - SUMMARY_INCLUDE : 0
     $searchResultPage.append('<a class="searchResultTitle" href="' + result.ref + '">' + result.title + '</a>')
-    $searchResultPage.append('<div class="searchResultBody">' + result.body.substr(bodyStartPosition, SUMMARY_INCLUDE) + '</div>')
+    $searchResultPage.append('<div class="searchResultBody">' + result.body.substr(bodyStartPosition, SUMMARY_INCLUDE * 2) + '</div>')
     $searchResults.append($searchResultPage)
 
     // Highlight keyword
