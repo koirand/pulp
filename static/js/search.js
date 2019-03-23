@@ -26,12 +26,12 @@ function initSearch () {
 function initUI () {
   // Clear query when clear icon is clicked
   $('#searchBoxIcon').click(function () {
-    $('#searchBox').val('')
-    $('#searchBox').trigger('keyup')
+    $('#searchBoxInput').val('')
+    $('#searchBoxInput').trigger('keyup')
   })
 
   // Event when chenging query
-  $('#searchBox').keyup(function () {
+  $('#searchBoxInput').keyup(function () {
     var $searchResults = $('#searchResults')
     var query = $(this).val().trim()
 
@@ -56,7 +56,7 @@ function initUI () {
   })
 
   // Emit keyup event for when the query is already setted with browser back etc.
-  $('#searchBox').trigger('keyup')
+  $('#searchBoxInput').trigger('keyup')
 }
 
 /**
@@ -65,7 +65,7 @@ function initUI () {
  */
 function renderResults (results) {
   var $searchResults = $('#searchResults')
-  var query = $('#searchBox').val()
+  var query = $('#searchBoxInput').val()
   var SUMMARY_INCLUDE = 50
   var MAX_PAGES = 10
 

@@ -1,22 +1,27 @@
 {{ define "main"}}
-    <div>
-        <div class="searchBoxContainer">
-            <input type="text" id="searchBox" class="searchBox" placeholder="Search..." />
-            <img id="searchBoxIcon" class="searchBoxIcon" src="/img/search.png" />
-        </div>
-        <div id="searchResults" class="searchResults"></div>
-        {{ range $index, $value := .Pages.GroupByDate .Site.Params.listPageDateFormat }}
-        {{ if (ne $index 0) }}
-        <hr class="separator">
-        {{ end }}
-        <p class="date">{{ .Key }}</p>
-        {{ range .Pages }}
-            <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
-        {{ end }}
-        {{ end }}
-    </div>
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/jquery.mark.es6.min.js"></script>
-    <script src="/js/fuse.min.js"></script>
-    <script src="/js/search.js"></script>
+  {{ partial "header.html" . }}
+  <!-- search box -->
+  <div id="searchBox">
+    <input type="text" id="searchBoxInput" placeholder="Search..." />
+    <img id="searchBoxIcon" src="/img/search.png" />
+  </div>
+  <!-- search results -->
+  <div id="searchResults"></div>
+  <!-- contents -->
+  <div id="contentsList">
+    {{ range $index, $value := .Pages.GroupByDate .Site.Params.listPageDateFormat }}
+    {{ if (ne $index 0) }}
+    <hr class="separator">
+    {{ end }}
+    <p class="date">{{ .Key }}</p>
+    {{ range .Pages }}
+      <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+    {{ end }}
+    {{ end }}
+  </div>
+  {{ partial "footer.html" . }}
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/jquery.mark.es6.min.js"></script>
+  <script src="/js/fuse.min.js"></script>
+  <script src="/js/search.js"></script>
 {{ end }}
