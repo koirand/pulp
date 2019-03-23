@@ -3,8 +3,8 @@ title = "Site Title"
 theme = "pulp"
 canonifyurls = true
 hasCJKLanguage = true
-pygmentsCodefences = true
-pygmentsUseClasses = true
+pygmentsCodefences = false
+pygmentsUseClasses = false
 # googleAnalytics = "{your tracking code}"
 
 [params]
@@ -39,4 +39,3 @@ pygmentsUseClasses = true
 [[menu.main]]
     name = "Email"
     url = "mailto:username@example.com"
-
