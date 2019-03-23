@@ -26,16 +26,24 @@ pygmentsUseClasses = false
 
 [[menu.main]]
     name = "Blog"
+    pre = "<i class='fa fa-book-open fa-lg'></i>"
     url = "/blog/"
+    weight = 10
 
 [[menu.main]]
     name = "Twitter"
+    pre = "<i class='fab fa-twitter fa-lg'></i>"
     url = "https://twitter.com/username"
+    weight = 20
 
 [[menu.main]]
     name = "GitHub"
+    pre = "<i class='fab fa-github fa-lg'></i>"
     url = "https://github.com/username"
+    weight = 30
 
 [[menu.main]]
     name = "Email"
+    pre = "<i class='fa fa-envelope fa-lg'></i>"
     url = "mailto:username@example.com"
+    weight = 40
