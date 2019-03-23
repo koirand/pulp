@@ -1,10 +1,11 @@
 {{ define "main"}}
-    <div>
-        <h1>{{ .Title }}</h1>
-        <p class="date">{{ .Date.Format .Site.Params.singlePageDateFormat }}</p>
-        <div class="markdown-body">
-            {{ .Content }}
-        </div>
-    </div>
+  <h1>{{ .Title }}</h1>
+  {{ partial "header.html" . }}
+  <!-- date -->
+  <p class="date">{{ .Date.Format .Site.Params.singlePageDateFormat }}</p>
+  <!-- content -->
+  <div class="markdown-body">
+    {{ .Content }}
+  </div>
+  {{ partial "footer.html" . }}
 {{ end }}
-

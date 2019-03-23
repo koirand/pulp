@@ -1,24 +1,14 @@
+/* General */
 body {
+    min-height:100vh;
     margin: 0;
+    padding: 20px;
+    box-sizing:border-box;
     background-color: #EFEFEF;
     color: #707070;
     text-align: center;
     font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
     line-height: 1.5;
-}
-
-header {
-    padding: 30px 0;
-}
-
-footer {
-    font-size: 12px;
-}
-
-hr.separator {
-    width: 10px;
-    margin: 30px auto;
-    border: solid 1px #C9C9C9;
 }
 
 a:link {
@@ -37,19 +27,6 @@ a:active {
     color: #707070;
 }
 
-div.profile {
-    min-height: calc(100vh - 42px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-div.profile-body {
-    width: 60vw;
-    max-width: 400px;
-    min-width: 300px;
-}
-
 .author {
     color: #C39F59;
 }
@@ -58,12 +35,13 @@ div.profile-body {
     color: #869D38;
 }
 
-div.avatar {
+/* Header */
+header .avatar {
     position: relative;
     height: 100px;
 }
 
-div.avatar img {
+header .avatar img {
     position: absolute;
     width: 100px;
     margin: 0 auto;
@@ -71,25 +49,44 @@ div.avatar img {
     right: 0;
 }
 
-div.avatar img.avatar-mask {
+header .avatarMask {
     clip-path: circle(48px at center);
     -webkit-clip-path: circle(48px at center);
 }
 
-div.main {
-    display: flex;
-    justify-content: center;
-    min-height: calc(100vh - 202px);
-    min-width: 300px;
-    margin: 0 10px;
+header a.author:link {
+    color: #C39F59;
 }
 
-div.markdown-body {
-    width: 90vw;
-    max-width: 800px;
+header a.author:visited {
+    color: #C39F59;
+}
+
+header a.author:hover {
+    color: #C39F59;
+}
+
+header a.author:active {
+    color: #C39F59;
+}
+
+/* Footer */
+footer {
+    font-size: 12px;
+    box-sizing:border-box;
+}
+
+/* Top page */
+#profileContainer {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile {
+    max-width: 600px;
     min-width: 300px;
-    margin: 40px auto;
-    text-align: left;
 }
 
 nav ul {
@@ -101,14 +98,15 @@ nav ul {
     list-style: none;
 }
 
-div.searchBoxContainer {
+/* Contents List */
+#searchBox {
     position: relative;
     width: 300px;
     height: 30px;
-    margin: 10px auto 50px auto;
+    margin: 20px auto;
 }
 
-input.searchBox {
+#searchBox #searchBoxInput {
     position: absolute;
     width: 100%;
     padding: 0 35px 0 15px;
@@ -125,17 +123,25 @@ input.searchBox {
     box-sizing: border-box;
 }
 
-input.searchBox::placeholder {
+#searchBox #searchBoxInput::placeholder {
     color: #c9c9c9;
 }
 
-div.searchResults {
+#searchBox #searchBoxIcon {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 5px;
+    right: 10px;
+}
+
+#searchResults {
     display: none;
     position: absolute;
     max-width: 600px;
     min-width: 300px;
     margin: 0 auto;
-    top: 210px;
+    top: 240px;
     left: 0;
     right: 0;
     padding: 5px;
@@ -146,27 +152,39 @@ div.searchResults {
     box-sizing: border-box;
 }
 
-div.searchResultPage {
+#searchResults .searchResultPage {
     padding: 20px
 }
 
-div.searchResultTitle {
+#searchResults .searchResultTitle {
     font-weight: bold;
     margin: 5px 0;
 }
 
-div.searchResultBody {
+#searchResults .searchResultBody {
     font-size: 14px;
 }
 
-img.searchBoxIcon {
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    top: 5px;
-    right: 10px;
+#searchResults mark {
+    background-color: #dddfdf;
 }
 
-mark {
-    background-color: #dddfdf;
+#contentsList {
+  padding: 20px;
+}
+
+#contentsList hr.separator {
+    width: 10px;
+    margin: 30px auto;
+    border: solid 1px #C9C9C9;
+}
+
+/* Page */
+div.markdown-body {
+    width: 90vw;
+    max-width: 800px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
 }

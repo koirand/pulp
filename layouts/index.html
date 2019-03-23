@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
-    {{- partial "head.html" . -}}
-    <body>
-        <div class="profile">
-            <div class="profile-body">
-                <div class="avatar">
-                    <img class="avatar-mask" src="/img/{{ .Site.Params.avatar }}">
-                    <img src="/img/avatar-border.svg">
-                </div>
-                <h1 class="author">{{ .Site.Params.Author }}</h1>
-                <p>
-                    {{ .Site.Params.discription }}
-                </p>
-                <nav>
-                    <ul>
-                        {{ range .Site.Menus.main }}
-                        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                        {{ end }}
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+  {{- partial "head.html" . -}}
+  <body>
+    <div id="profileContainer">
+      <div id="profile">
+        <header>
+          <!-- avator -->
+          <div class="avatar">
+            <img class="avatarMask" src="/img/{{ .Site.Params.avatar }}" alt="avatar">
+            <img src="/img/avatar-border.svg" alt="avatar-border">
+          </div>
+          <!-- author -->
+          <h1 class="author">{{ .Site.Params.Author }}</h1>
+        </header>
+        <!-- discription -->
+        <p>
+          {{ .Site.Params.discription }}
+        </p>
+        <!-- navigation -->
+        <nav>
+          <ul>
+            {{ range .Site.Menus.main }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </nav>
+      </div>
+    </div>
+    {{- partial "footer.html" . -}}
+  </body>
 </html>
