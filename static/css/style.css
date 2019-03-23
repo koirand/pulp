@@ -27,14 +27,6 @@ a:active {
     color: #707070;
 }
 
-.author {
-    color: #C39F59;
-}
-
-.date {
-    color: #869D38;
-}
-
 /* Header */
 header .avatar {
     position: relative;
@@ -52,22 +44,6 @@ header .avatar img {
 header .avatarMask {
     clip-path: circle(48px at center);
     -webkit-clip-path: circle(48px at center);
-}
-
-header a.author:link {
-    color: #C39F59;
-}
-
-header a.author:visited {
-    color: #C39F59;
-}
-
-header a.author:hover {
-    color: #C39F59;
-}
-
-header a.author:active {
-    color: #C39F59;
 }
 
 /* Footer */

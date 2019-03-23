@@ -2,3 +2,22 @@
     color: #C39F59;
 }
 
+header a.author:link {
+    color: #C39F59;
+}
+
+header a.author:visited {
+    color: #C39F59;
+}
+
+header a.author:hover {
+    color: #C39F59;
+}
+
+header a.author:active {
+    color: #C39F59;
+}
+
+.date {
+    color: #869D38;
+}
