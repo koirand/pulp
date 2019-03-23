@@ -1,5 +1,7 @@
 /* General */
 body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   min-height:100vh;
   margin: 0;
   padding: 20px;
@@ -7,8 +9,10 @@ body {
   background-color: #EFEFEF;
   color: #707070;
   text-align: center;
-  font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.5;
+  font-size: 16px;
+  word-wrap: break-word;
 }
 
 a:link {
@@ -62,13 +66,13 @@ footer {
 
 #profile {
   max-width: 600px;
-  min-width: 300px;
+  /* min-width: 300px; */
 }
 
 nav ul {
   display: flex;
   justify-content: space-evenly;
-  width: 300px;
+  max-width: 300px;
   margin: 20px auto;
   padding: 0;
   list-style: none;
@@ -77,7 +81,7 @@ nav ul {
 /* Contents List */
 #searchBox {
   position: relative;
-  width: 300px;
+  max-width: 300px;
   height: 30px;
   margin: 20px auto;
 }
@@ -115,7 +119,7 @@ nav ul {
   display: none;
   position: absolute;
   max-width: 600px;
-  min-width: 300px;
+  /* min-width: 300px; */
   margin: 0 auto;
   top: 240px;
   left: 0;
@@ -146,21 +150,19 @@ nav ul {
 }
 
 #contentsList {
-  padding: 20px;
+  padding: 20px 0;
 }
 
 #contentsList hr.separator {
   width: 10px;
   margin: 30px auto;
-  border: solid 1px #C9C9C9;
+  border: solid 1px #c9c9c9;
 }
 
 /* Page */
-div.markdown-body {
-  width: 90vw;
+#contentBody {
   max-width: 800px;
-  min-width: 300px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 0;
   text-align: left;
 }

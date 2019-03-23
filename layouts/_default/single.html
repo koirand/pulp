@@ -4,7 +4,7 @@
   <!-- date -->
   <p class="date">{{ .Date.Format .Site.Params.singlePageDateFormat }}</p>
   <!-- content -->
-  <div class="markdown-body">
+  <div id="contentBody">
     {{ .Content }}
   </div>
   {{ partial "footer.html" . }}
