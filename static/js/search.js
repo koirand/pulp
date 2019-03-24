@@ -1,22 +1,39 @@
-var fuse
+var lunrIndex
+var lunrResult
+var pagesIndex
 
 /**
- * Preparation for searching
+ * Preparation for using lunr.js
  */
-function initSearch () {
+function initLunr () {
   $.getJSON('index.json').done(function (index) {
-    var options = {
-      shouldSort: true,
-      tokenize: true,
-      matchAllTokens: true,
-      threshold: 0.3,
-      minMatchCharLength: 5,
-      keys: ['title', 'body']
-    }
-    fuse = new Fuse(index, options)
+    pagesIndex = index
+    lunrIndex = lunr(function () {
+      this.ref('ref')
+      this.field('title', { boost: 10 })
+      this.field('body')
+      this.metadataWhitelist = ['position']
+      for (var page of pagesIndex) {
+        this.add(page)
+      }
+    })
   }).fail(function (jqxhr, textStatus, error) {
     var err = textStatus + ', ' + error
     console.error('Error getting Hugo index flie:', err)
+  })
+}
+
+/**
+ * Searching pages using lunr
+ * @param {String} query Query string for searching
+ * @return {Object[]} Array of search results
+ */
+function search (query) {
+  lunrResult = lunrIndex.search(query)
+  return lunrResult.map(function (result) {
+    return pagesIndex.filter(function (page) {
+      return page.ref === result.ref
+    })[0]
   })
 }
 
@@ -33,7 +50,7 @@ function initUI () {
   // Event when chenging query
   $('#searchBoxInput').keyup(function () {
     var $searchResults = $('#searchResults')
-    var query = $(this).val().trim()
+    var query = $(this).val()
 
     // Icon switching
     if (query.length) {
@@ -51,7 +68,7 @@ function initUI () {
     }
 
     // Display search results
-    renderResults(fuse.search(query))
+    renderResults(search(query))
     $searchResults.show()
   })
 
@@ -66,7 +83,7 @@ function initUI () {
 function renderResults (results) {
   var $searchResults = $('#searchResults')
   var query = $('#searchBoxInput').val()
-  var SUMMARY_INCLUDE = 50
+  var BODY_LENGTH = 100
   var MAX_PAGES = 10
 
   // Clear search result
@@ -81,10 +98,13 @@ function renderResults (results) {
   // Only show the ten first results
   results.slice(0, MAX_PAGES).forEach(function (result, idx) {
     var $searchResultPage = $('<div class="searchResultPage">')
-    var matchPosition = result.body.indexOf(query.split(' ')[0])
-    var bodyStartPosition = matchPosition - SUMMARY_INCLUDE > 0 ? matchPosition - SUMMARY_INCLUDE : 0
+    var metadata = lunrResult[idx].matchData.metadata
+    var matchPosition = metadata[Object.keys(metadata)[0]].body ? metadata[Object.keys(metadata)[0]].body.position[0][0] : 0
+    var bodyStartPosition = (matchPosition - (BODY_LENGTH / 2) > 0) ? matchPosition - (BODY_LENGTH / 2) : 0
+
     $searchResultPage.append('<a class="searchResultTitle" href="' + result.ref + '">' + result.title + '</a>')
-    $searchResultPage.append('<div class="searchResultBody">' + result.body.substr(bodyStartPosition, SUMMARY_INCLUDE * 2) + '</div>')
+
+    $searchResultPage.append('<div class="searchResultBody">' + result.body.substr(bodyStartPosition, BODY_LENGTH) + '</div>')
     $searchResults.append($searchResultPage)
 
     // Highlight keyword
@@ -92,7 +112,7 @@ function renderResults (results) {
   })
 }
 
-initSearch()
+initLunr()
 
 $(function () {
   initUI()
