@@ -2,6 +2,49 @@ var lunrIndex
 var lunrResult
 var pagesIndex
 
+var bigramTokeniser = function (obj, metadata) {
+  if (obj == null || obj == undefined) {
+    return []
+  }
+
+  if (Array.isArray(obj)) {
+    return obj.map(function (t) {
+      return new lunr.Token(
+        lunr.utils.asString(t).toLowerCase(),
+        lunr.utils.clone(metadata)
+      )
+    })
+  }
+
+  var str = obj.toString().trim().toLowerCase(),
+      tokens = []
+
+  for(var i = 0; i <= str.length - 2; i++) {
+    var tokenMetadata = lunr.utils.clone(metadata) || {}
+    tokenMetadata["position"] = [i, i + 2]
+    tokenMetadata["index"] = tokens.length
+    tokens.push(
+      new lunr.Token (
+        str.slice(i, i + 2),
+        tokenMetadata
+      )
+    )
+  }
+
+  return tokens
+}
+
+var queryNgramSeparator = function (query) {
+  var str = query.toString().trim().toLowerCase(),
+      tokens = []
+
+  for(var i = 0; i <= str.length - 2; i++) {
+    tokens.push(str.slice(i, i + 2))
+  }
+
+  return tokens.join(' ')
+}
+
 /**
  * Preparation for using lunr.js
  */
@@ -9,6 +52,8 @@ function initLunr () {
   $.getJSON('index.json').done(function (index) {
     pagesIndex = index
     lunrIndex = lunr(function () {
+      this.tokenizer = bigramTokeniser
+      this.pipeline.reset()
       this.ref('ref')
       this.field('title', { boost: 10 })
       this.field('body')
@@ -29,7 +74,7 @@ function initLunr () {
  * @return {Object[]} Array of search results
  */
 function search (query) {
-  lunrResult = lunrIndex.search(query)
+  lunrResult = lunrIndex.search(queryNgramSeparator(query))
   return lunrResult.map(function (result) {
     return pagesIndex.filter(function (page) {
       return page.ref === result.ref
