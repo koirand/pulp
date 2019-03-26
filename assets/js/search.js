@@ -1,9 +1,10 @@
-var lunrIndex
-var lunrResult
-var pagesIndex
+/* global lunr $ */
+let lunrIndex
+let lunrResult
+let pagesIndex
 
-var bigramTokeniser = function (obj, metadata) {
-  if (obj == null || obj == undefined) {
+const bigramTokeniser = (obj, metadata) => {
+  if (obj == null || obj === undefined) {
     return []
   }
 
@@ -16,15 +17,15 @@ var bigramTokeniser = function (obj, metadata) {
     })
   }
 
-  var str = obj.toString().trim().toLowerCase(),
-      tokens = []
+  var str = obj.toString().trim().toLowerCase()
+  var tokens = []
 
-  for(var i = 0; i <= str.length - 2; i++) {
+  for (var i = 0; i <= str.length - 2; i++) {
     var tokenMetadata = lunr.utils.clone(metadata) || {}
-    tokenMetadata["position"] = [i, i + 2]
-    tokenMetadata["index"] = tokens.length
+    tokenMetadata['position'] = [i, i + 2]
+    tokenMetadata['index'] = tokens.length
     tokens.push(
-      new lunr.Token (
+      new lunr.Token(
         str.slice(i, i + 2),
         tokenMetadata
       )
@@ -35,10 +36,10 @@ var bigramTokeniser = function (obj, metadata) {
 }
 
 var queryNgramSeparator = function (query) {
-  var str = query.toString().trim().toLowerCase(),
-      tokens = []
+  var str = query.toString().trim().toLowerCase()
+  var tokens = []
 
-  for(var i = 0; i <= str.length - 2; i++) {
+  for (var i = 0; i <= str.length - 2; i++) {
     tokens.push(str.slice(i, i + 2))
   }
 
@@ -48,7 +49,7 @@ var queryNgramSeparator = function (query) {
 /**
  * Preparation for using lunr.js
  */
-function initLunr () {
+const initLunr = () => {
   $.getJSON('index.json').done(function (index) {
     pagesIndex = index
     lunrIndex = lunr(function () {
