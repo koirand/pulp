@@ -20,8 +20,10 @@
     {{ end }}
   </div>
   {{ partial "footer.html" . }}
-  <script src="/js/jquery-3.3.1.min.js"></script>
-  <script src="/js/jquery.mark.es6.min.js"></script>
-  <script src="/js/lunr.js"></script>
-  <script src="/js/search.js"></script>
+  {{ $jquery := resources.Get "js/jquery-3.3.1.min.js" }}
+  {{ $mark := resources.Get "js/jquery.mark.es6.min.js" }}
+  {{ $lunr := resources.Get "js/lunr.js" }}
+  {{ $search := resources.Get "js/search.js" }}
+  {{ $js := slice $jquery $mark $lunr $search | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint }}
+  <script src="{{ $js.Permalink }}"></script>
 {{ end }}
