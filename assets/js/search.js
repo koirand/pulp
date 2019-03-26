@@ -65,15 +65,16 @@ const queryNgramSeparator = (query) => {
 const initLunr = () => {
   $.getJSON('index.json').done((index) => {
     pagesIndex = index
-    lunrIndex = lunr(() => {
-      this.tokenizer = bigramTokeniser
-      this.pipeline.reset()
-      this.ref('ref')
-      this.field('title', { boost: 10 })
-      this.field('body')
-      this.metadataWhitelist = ['position']
+    lunrIndex = lunr(builder => {
+      console.log(builder)
+      builder.tokenizer = bigramTokeniser
+      builder.pipeline.reset()
+      builder.ref('ref')
+      builder.field('title', { boost: 10 })
+      builder.field('body')
+      builder.metadataWhitelist = ['position']
       for (let page of pagesIndex) {
-        this.add(page)
+        builder.add(page)
       }
     })
   }).fail((jqxhr, textStatus, error) => {
@@ -107,9 +108,9 @@ const initUI = () => {
   })
 
   // Event when chenging query
-  $('#searchBoxInput').keyup(() => {
+  $('#searchBoxInput').keyup(event => {
     const $searchResults = $('#searchResults')
-    const query = $(this).val()
+    const query = $(event.currentTarget).val()
 
     // Icon switching
     if (query.length) {
