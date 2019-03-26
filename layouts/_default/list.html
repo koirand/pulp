@@ -24,6 +24,6 @@
   {{ $mark := resources.Get "js/jquery.mark.es6.min.js" }}
   {{ $lunr := resources.Get "js/lunr.js" }}
   {{ $search := resources.Get "js/search.js" }}
-  {{ $js := slice $jquery $mark $lunr $search | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint }}
+  {{ $js := slice $jquery $mark $lunr $search | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint }}
   <script src="{{ $js.Permalink }}"></script>
 {{ end }}
