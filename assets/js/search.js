@@ -1,14 +1,23 @@
-var lunrIndex
-var lunrResult
-var pagesIndex
+/* global lunr $ */
+let lunrIndex
+let lunrResult
+let pagesIndex
 
-var bigramTokeniser = function (obj, metadata) {
-  if (obj == null || obj == undefined) {
+/**
+ * A function for splitting a string into bigram.
+ *
+ * @static
+ * @param {?(string|object|object[])} obj - The object to convert into tokens
+ * @param {?object} metadata - Optional metadata to associate with every token
+ * @returns {lunr.Token[]}
+ */
+const bigramTokeniser = (obj, metadata) => {
+  if (obj == null || obj === undefined) {
     return []
   }
 
   if (Array.isArray(obj)) {
-    return obj.map(function (t) {
+    return obj.map((t) => {
       return new lunr.Token(
         lunr.utils.asString(t).toLowerCase(),
         lunr.utils.clone(metadata)
@@ -16,67 +25,72 @@ var bigramTokeniser = function (obj, metadata) {
     })
   }
 
-  var str = obj.toString().trim().toLowerCase(),
-      tokens = []
+  let str = obj.toString().trim().toLowerCase()
+  let tokens = []
 
-  for(var i = 0; i <= str.length - 2; i++) {
-    var tokenMetadata = lunr.utils.clone(metadata) || {}
-    tokenMetadata["position"] = [i, i + 2]
-    tokenMetadata["index"] = tokens.length
+  for (let i = 0; i <= str.length - 2; i++) {
+    const tokenMetadata = lunr.utils.clone(metadata) || {}
+    tokenMetadata['position'] = [i, i + 2]
+    tokenMetadata['index'] = tokens.length
     tokens.push(
-      new lunr.Token (
+      new lunr.Token(
         str.slice(i, i + 2),
         tokenMetadata
       )
     )
   }
-
   return tokens
 }
 
-var queryNgramSeparator = function (query) {
-  var str = query.toString().trim().toLowerCase(),
-      tokens = []
+/**
+ * A function for separating a string into bigram and join it with space.
+ *
+ * @static
+ * @param {?string} query - The string to convert into tokens
+ * @returns {string}
+ */
+const queryNgramSeparator = (query) => {
+  const str = query.toString().trim().toLowerCase()
+  const tokens = []
 
-  for(var i = 0; i <= str.length - 2; i++) {
+  for (let i = 0; i <= str.length - 2; i++) {
     tokens.push(str.slice(i, i + 2))
   }
-
   return tokens.join(' ')
 }
 
 /**
  * Preparation for using lunr.js
  */
-function initLunr () {
-  $.getJSON('index.json').done(function (index) {
+const initLunr = () => {
+  $.getJSON('index.json').done((index) => {
     pagesIndex = index
-    lunrIndex = lunr(function () {
+    lunrIndex = lunr(() => {
       this.tokenizer = bigramTokeniser
       this.pipeline.reset()
       this.ref('ref')
       this.field('title', { boost: 10 })
       this.field('body')
       this.metadataWhitelist = ['position']
-      for (var page of pagesIndex) {
+      for (let page of pagesIndex) {
         this.add(page)
       }
     })
-  }).fail(function (jqxhr, textStatus, error) {
-    var err = textStatus + ', ' + error
+  }).fail((jqxhr, textStatus, error) => {
+    const err = textStatus + ', ' + error
     console.error('Error getting Hugo index flie:', err)
   })
 }
 
 /**
  * Searching pages using lunr
- * @param {String} query Query string for searching
- * @return {Object[]} Array of search results
+ * @param {String} query - Query string for searching
+ * @return {Object[]} - Array of search results
  */
-function search (query) {
+const search = (query) => {
   lunrResult = lunrIndex.search(queryNgramSeparator(query))
-  return lunrResult.map(function (result) {
-    return pagesIndex.filter(function (page) {
+  return lunrResult.map((result) => {
+    return pagesIndex.filter((page) => {
       return page.ref === result.ref
     })[0]
   })
@@ -85,17 +99,17 @@ function search (query) {
 /**
  * Setup UI for Search
  */
-function initUI () {
+const initUI = () => {
   // Clear query when clear icon is clicked
-  $('#searchBoxIcon').click(function () {
+  $('#searchBoxIcon').click(() => {
     $('#searchBoxInput').val('')
     $('#searchBoxInput').trigger('keyup')
   })
 
   // Event when chenging query
-  $('#searchBoxInput').keyup(function () {
-    var $searchResults = $('#searchResults')
-    var query = $(this).val()
+  $('#searchBoxInput').keyup(() => {
+    const $searchResults = $('#searchResults')
+    const query = $(this).val()
 
     // Icon switching
     if (query.length) {
@@ -125,11 +139,11 @@ function initUI () {
  * Rendering search results
  * @param {Object[]} results Array of search results
  */
-function renderResults (results) {
-  var $searchResults = $('#searchResults')
-  var query = $('#searchBoxInput').val()
-  var BODY_LENGTH = 100
-  var MAX_PAGES = 10
+const renderResults = (results) => {
+  const $searchResults = $('#searchResults')
+  const query = $('#searchBoxInput').val()
+  const BODY_LENGTH = 100
+  const MAX_PAGES = 10
 
   // Clear search result
   $searchResults.empty()
@@ -141,11 +155,11 @@ function renderResults (results) {
   }
 
   // Only show the ten first results
-  results.slice(0, MAX_PAGES).forEach(function (result, idx) {
-    var $searchResultPage = $('<div class="searchResultPage">')
-    var metadata = lunrResult[idx].matchData.metadata
-    var matchPosition = metadata[Object.keys(metadata)[0]].body ? metadata[Object.keys(metadata)[0]].body.position[0][0] : 0
-    var bodyStartPosition = (matchPosition - (BODY_LENGTH / 2) > 0) ? matchPosition - (BODY_LENGTH / 2) : 0
+  results.slice(0, MAX_PAGES).forEach((result, idx) => {
+    const $searchResultPage = $('<div class="searchResultPage">')
+    const metadata = lunrResult[idx].matchData.metadata
+    const matchPosition = metadata[Object.keys(metadata)[0]].body ? metadata[Object.keys(metadata)[0]].body.position[0][0] : 0
+    const bodyStartPosition = (matchPosition - (BODY_LENGTH / 2) > 0) ? matchPosition - (BODY_LENGTH / 2) : 0
 
     $searchResultPage.append('<a class="searchResultTitle" href="' + result.ref + '">' + result.title + '</a>')
 
@@ -159,6 +173,6 @@ function renderResults (results) {
 
 initLunr()
 
-$(function () {
+$(() => {
   initUI()
 })
