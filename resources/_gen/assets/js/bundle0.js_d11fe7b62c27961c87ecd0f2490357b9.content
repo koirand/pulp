@@ -671,8 +671,7 @@ const tokens=[]
 for(let i=0;i<=str.length-2;i++){tokens.push(str.slice(i,i+2))}
 return tokens.join(' ')}
 const initLunr=()=>{$.getJSON('index.json').done((index)=>{pagesIndex=index
-lunrIndex=lunr(builder=>{console.log(builder)
-builder.tokenizer=bigramTokeniser
+lunrIndex=lunr(builder=>{builder.tokenizer=bigramTokeniser
 builder.pipeline.reset()
 builder.ref('ref')
 builder.field('title',{boost:10})
@@ -686,8 +685,8 @@ const initUI=()=>{$('#searchBoxIcon').click(()=>{$('#searchBoxInput').val('')
 $('#searchBoxInput').trigger('keyup')})
 $('#searchBoxInput').keyup(event=>{const $searchResults=$('#searchResults')
 const query=$(event.currentTarget).val()
-if(query.length){$('#searchBoxIcon').attr('src','/img/clear.png')
-$('#searchBoxIcon').css('cursor','pointer')}else{$('#searchBoxIcon').attr('src','/img/search.png')
+if(query.length){$('#searchBoxIcon').attr('src','../img/clear.png')
+$('#searchBoxIcon').css('cursor','pointer')}else{$('#searchBoxIcon').attr('src','../img/search.png')
 $('#searchBoxIcon').css('cursor','default')}
 if(query.length<2){$searchResults.hide()
 return}

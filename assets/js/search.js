@@ -66,7 +66,6 @@ const initLunr = () => {
   $.getJSON('index.json').done((index) => {
     pagesIndex = index
     lunrIndex = lunr(builder => {
-      console.log(builder)
       builder.tokenizer = bigramTokeniser
       builder.pipeline.reset()
       builder.ref('ref')
@@ -114,10 +113,10 @@ const initUI = () => {
 
     // Icon switching
     if (query.length) {
-      $('#searchBoxIcon').attr('src', '/img/clear.png')
+      $('#searchBoxIcon').attr('src', '../img/clear.png')
       $('#searchBoxIcon').css('cursor', 'pointer')
     } else {
-      $('#searchBoxIcon').attr('src', '/img/search.png')
+      $('#searchBoxIcon').attr('src', '../img/search.png')
       $('#searchBoxIcon').css('cursor', 'default')
     }
 
