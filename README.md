@@ -1,5 +1,5 @@
 # pulp
-![logo](https://rawcdn.githack.com/koirand/pulp/5484f16d91e42c7796de8adc29b15c01eb782370/images/logo.png)  
+![logo](https://rawcdn.githack.com/koirand/pulp/9e51db7a3090a8a52d6bdbe15bc8934d99997fb9/images/logo.png)  
 
 Pulp is a [Hugo](https://gohugo.io/) theme for getting a simple, easy-to-read blog site.
 
