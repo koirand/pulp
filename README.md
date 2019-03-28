@@ -1,14 +1,14 @@
 # pulp
-![logo](https://rawcdn.githack.com/koirand/pulp/9e51db7a3090a8a52d6bdbe15bc8934d99997fb9/images/logo.png)  
+![logo](https://github.com/koirand/pulp/blob/master/images/logo.png?raw=true)  
 
 Pulp is a [Hugo](https://gohugo.io/) theme for getting a simple, easy-to-read blog site.
 
 ## Screenshots
-![screenshot-top](https://rawcdn.githack.com/koirand/pulp/5484f16d91e42c7796de8adc29b15c01eb782370/images/ss-top.png)
+![screenshot-top](https://github.com/koirand/pulp/blob/master/images/ss-top.png?raw=true)
 
-![screenshot-list](https://rawcdn.githack.com/koirand/pulp/5484f16d91e42c7796de8adc29b15c01eb782370/images/ss-list.png)
+![screenshot-list](https://github.com/koirand/pulp/blob/master/images/ss-list.png?raw=true)
 
-![screenshot-page](https://rawcdn.githack.com/koirand/pulp/5484f16d91e42c7796de8adc29b15c01eb782370/images/ss-page.png)
+![screenshot-page](https://github.com/koirand/pulp/blob/master/images/ss-page.png?raw=true)
 
 ## Installation
 
