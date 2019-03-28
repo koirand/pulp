@@ -3,8 +3,8 @@ title = "Site Title"
 theme = "pulp"
 canonifyurls = true
 hasCJKLanguage = true
-pygmentsCodefences = false
-pygmentsUseClasses = false
+# pygmentsCodefences = true
+# pygmentsUseClasses = true
 # googleAnalytics = "{your tracking code}"
 
 [params]
@@ -15,8 +15,8 @@ pygmentsUseClasses = false
         Please write anything here.
         Profiles, backgrounds, favorite things etc.
     """
-    publicationYear = "2018"
-    listPageDateFormat = "January, 2006"   # See https://gohugo.io/functions/format/
+    publicationYear = "2019"
+    listPageDateFormat = "January, 2006" # See https://gohugo.io/functions/format/
     singlePageDateFormat = "January 2, 2006"
     # custom_css = ["/css/custom.css"]
     # custom_js = ["/js/custom.js"]
@@ -26,7 +26,7 @@ pygmentsUseClasses = false
 
 [[menu.main]]
     name = "Blog"
-    pre = "<i class='fa fa-book-open fa-lg'></i>"
+    pre = "<i class='fa fa-book-open fa-lg'></i>" #Choose your favorite font from Font Awesome
     url = "/blog/"
     weight = 10
 
