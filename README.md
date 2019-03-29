@@ -1,15 +1,14 @@
 # pulp
-![logo](https://github.com/koirand/pulp/blob/master/images/logo.png?raw=true)  
+![logo](https://user-images.githubusercontent.com/17229643/55247565-50245180-528b-11e9-9947-aa3c54ea05bb.png)  
 
 Pulp is a [Hugo](https://gohugo.io/) theme for getting a simple, easy-to-read blog site.
 
 ## Screenshots
-![screenshot-top](https://github.com/koirand/pulp/blob/master/images/ss-top.png?raw=true)
+![screenshot-top](https://user-images.githubusercontent.com/17229643/55247370-c7a5b100-528a-11e9-835b-108bd6047699.png)
 
-![screenshot-list](https://github.com/koirand/pulp/blob/master/images/ss-list.png?raw=true)
+![screenshot-list](https://user-images.githubusercontent.com/17229643/55247387-d12f1900-528a-11e9-8144-c984031e16c0.png)
 
-![screenshot-page](https://github.com/koirand/pulp/blob/master/images/ss-page.png?raw=true)
-
+![screenshot-page](https://user-images.githubusercontent.com/17229643/55247395-d5f3cd00-528a-11e9-82ed-4830523c5bfa.png)
 ## Installation
 
 If your site is also under version control using git, the easiest way to install this theme is to add it as a submodule. If you have not created a git repo for your project yet, you need to run `git init` beforehand. Inside the folder of your Hugo site, run the following command.
