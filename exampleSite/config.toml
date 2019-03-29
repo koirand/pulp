@@ -7,6 +7,9 @@ hasCJKLanguage = true
 # pygmentsUseClasses = true
 # googleAnalytics = "{your tracking code}"
 
+[taxonomies]
+  series = "series"
+
 [params]
     author = "Your Name"
     avatar = "avatar.jpg"
