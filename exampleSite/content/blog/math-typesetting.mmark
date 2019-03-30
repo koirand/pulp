@@ -1,8 +1,8 @@
----
-title: "Math Typesetting"
-date: 2019-03-08
-draft: false
----
++++
+title = "Math Typesetting"
+date = "2019-03-08"
+draft = false
++++
 
 Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.
 <!--more-->
