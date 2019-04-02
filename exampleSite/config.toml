@@ -14,7 +14,7 @@ hasCJKLanguage = true
     author = "Your Name"
     avatar = "avatar.jpg"
     favicon = "favicon.ico"
-    discription = """
+    description = """
         Please write anything here.
         Profiles, backgrounds, favorite things etc.
     """
