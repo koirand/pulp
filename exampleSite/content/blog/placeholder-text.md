@@ -1,8 +1,8 @@
-+++
-title = "Placeholder Text"
-date = "2019-03-09"
-draft = false
-+++
+---
+title: "Placeholder Text"
+date: 2019-03-09
+draft: false
+---
 
 ## Mole et vultus populifer quaque primoque non
 
