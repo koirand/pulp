@@ -28,25 +28,29 @@ hasCJKLanguage = true
     section = ["JSON", "HTML"]
 
 [[menu.main]]
-    name = "Blog"
+    identifier = "blog"
+    # name = "Blog" #If display text link, cancel comment out
     pre = "<i class='fa fa-book-open fa-lg'></i>" #Choose your favorite font from Font Awesome
     url = "/blog/"
     weight = 10
 
 [[menu.main]]
-    name = "Twitter"
+    identifier = "twitter"
+    # name = "Twitter"
     pre = "<i class='fab fa-twitter fa-lg'></i>"
     url = "https://twitter.com/username"
     weight = 20
 
 [[menu.main]]
-    name = "GitHub"
+    identifier = "github"
+    # name = "GitHub"
     pre = "<i class='fab fa-github fa-lg'></i>"
     url = "https://github.com/username"
     weight = 30
 
 [[menu.main]]
-    name = "Email"
+    identifier = "email"
+    # name = "Email"
     pre = "<i class='fa fa-envelope fa-lg'></i>"
     url = "mailto:username@example.com"
     weight = 40
