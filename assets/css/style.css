@@ -78,6 +78,10 @@ nav ul {
   list-style: none;
 }
 
+nav li {
+  flex: 1;
+}
+
 /* Contents List */
 #searchBox {
   position: relative;
