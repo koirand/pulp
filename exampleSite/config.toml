@@ -19,8 +19,8 @@ hasCJKLanguage = true
         Profiles, backgrounds, favorite things etc.
     """
     publicationYear = "2019"
-    listPageDateFormat = "January, 2006" # See https://gohugo.io/functions/format/
-    singlePageDateFormat = "January 2, 2006"
+    # listPageDateFormat = "January, 2006" # See https://gohugo.io/functions/format/
+    # singlePageDateFormat = "January 2, 2006"
     # custom_css = ["/css/custom.css"]
     # custom_js = ["/js/custom.js"]
 

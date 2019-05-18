@@ -2,7 +2,8 @@
   <h1>{{ .Title }}</h1>
   {{ partial "header.html" . }}
   <!-- date -->
-  <p class="date">{{ .Date.Format .Site.Params.singlePageDateFormat }}</p>
+  {{ $singlePageDateFormat := .Site.Params.singlePageDateFormat | default "January 2, 2006"}}
+  <p class="date">{{ .Date.Format $singlePageDateFormat }}</p>
   <!-- content -->
   <div id="contentBody">
     {{ .Content }}
