@@ -9,7 +9,8 @@
   <div id="searchResults"></div>
   <!-- contents -->
   <div id="contentsList">
-    {{ range $index, $value := .Pages.GroupByDate .Site.Params.listPageDateFormat }}
+    {{ $listPageDateFormat := .Site.Params.listPageDateFormat | default "January, 2006"}}
+    {{ range $index, $value := .Pages.GroupByDate $listPageDateFormat }}
     {{ if (ne $index 0) }}
     <hr class="separator">
     {{ end }}
