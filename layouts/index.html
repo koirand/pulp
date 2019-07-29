@@ -15,7 +15,7 @@
         </header>
         <!-- description -->
         <p>
-          {{ .Site.Params.description }}
+          {{ .Site.Params.description | safeHTML }}
         </p>
         <!-- navigation -->
         <nav>
