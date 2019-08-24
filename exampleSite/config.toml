@@ -32,7 +32,7 @@ hasCJKLanguage = true
     # name = "Blog" #If display text link, cancel comment out
     pre = "<i class='fa fa-book-open fa-lg'></i>" #Choose your favorite font from Font Awesome
     url = "/blog/"
-    weight = 10
+    weight = 10 #menu is sorted by weight asc, order of writing is not reflected
 
 [[menu.main]]
     identifier = "twitter"
