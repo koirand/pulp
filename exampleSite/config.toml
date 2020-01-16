@@ -8,7 +8,7 @@ hasCJKLanguage = true
 # googleAnalytics = "{your tracking code}"
 
 [taxonomies]
-  series = "series"
+  tags = "tags"
 
 [params]
     author = "Your Name"

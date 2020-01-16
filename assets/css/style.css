@@ -154,6 +154,26 @@ nav li {
   background-color: #dddfdf;
 }
 
+#tags ul {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+#tags li {
+  height: 24px;
+  margin: 5px;
+  padding: 0 5px;
+  background-color: #dddfdf;
+  border-radius: 5px;
+  font-size: 14px;
+  /* text-decoration: none; */
+}
+
 #contentsList {
   padding: 20px 0;
 }
