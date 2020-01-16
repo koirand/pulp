@@ -4,6 +4,17 @@
   <!-- date -->
   {{ $singlePageDateFormat := .Site.Params.singlePageDateFormat | default "January 2, 2006"}}
   <p class="date">{{ .Date.Format $singlePageDateFormat }}</p>
+  <!-- tags -->
+  <div id="tags">
+    <ul>
+      {{ range .Param "tags" }}
+        {{ $name := . }}
+        {{ with $.Site.GetPage (printf "/tags/%s" ($name | urlize)) }}
+          <li><a href="{{ .Permalink }}">{{ $name }}</a></li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
   <!-- content -->
   <div id="contentBody">
     {{ .Content }}
