@@ -11,7 +11,7 @@
   <div id="tags">
     <ul>
       {{ range .Site.Taxonomies.tags.ByCount }}
-        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}({{ .Count }})</a></li>
+        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a></li>
       {{ end }}
     </ul>
   </div>
