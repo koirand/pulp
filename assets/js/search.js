@@ -112,11 +112,12 @@ const initUI = () => {
     const query = $(event.currentTarget).val()
 
     // Icon switching
+    const iconUrl = $('#searchBoxIcon').attr('src')
     if (query.length) {
-      $('#searchBoxIcon').attr('src', '../img/clear.png')
+      $('#searchBoxIcon').attr('src', iconUrl.replace('search.png', 'clear.png'))
       $('#searchBoxIcon').css('cursor', 'pointer')
     } else {
-      $('#searchBoxIcon').attr('src', '../img/search.png')
+      $('#searchBoxIcon').attr('src', iconUrl.replace('clear.png', 'search.png'))
       $('#searchBoxIcon').css('cursor', 'default')
     }
 
