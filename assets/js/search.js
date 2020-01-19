@@ -16,15 +16,6 @@ const bigramTokeniser = (obj, metadata) => {
     return []
   }
 
-  if (Array.isArray(obj)) {
-    return obj.map((t) => {
-      return new lunr.Token(
-        lunr.utils.asString(t).toLowerCase(),
-        lunr.utils.clone(metadata)
-      )
-    })
-  }
-
   let str = obj.toString().trim().toLowerCase()
   let tokens = []
 
@@ -70,6 +61,7 @@ const initLunr = () => {
       builder.pipeline.reset()
       builder.ref('ref')
       builder.field('title', { boost: 10 })
+      builder.field('tags', { boost: 10 })
       builder.field('body')
       builder.metadataWhitelist = ['position']
       for (let page of pagesIndex) {
@@ -112,11 +104,12 @@ const initUI = () => {
     const query = $(event.currentTarget).val()
 
     // Icon switching
+    const iconUrl = $('#searchBoxIcon').attr('src')
     if (query.length) {
-      $('#searchBoxIcon').attr('src', '../img/clear.png')
+      $('#searchBoxIcon').attr('src', iconUrl.replace('search.png', 'clear.png'))
       $('#searchBoxIcon').css('cursor', 'pointer')
     } else {
-      $('#searchBoxIcon').attr('src', '../img/search.png')
+      $('#searchBoxIcon').attr('src', iconUrl.replace('clear.png', 'search.png'))
       $('#searchBoxIcon').css('cursor', 'default')
     }
 

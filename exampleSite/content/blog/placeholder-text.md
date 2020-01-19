@@ -2,6 +2,7 @@
 title: "Placeholder Text"
 date: 2019-03-09
 draft: false
+tags: [ "markdown", "text", ]
 ---
 
 ## Mole et vultus populifer quaque primoque non

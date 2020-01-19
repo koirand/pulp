@@ -126,7 +126,7 @@ nav li {
   max-width: 600px;
   /* min-width: 300px; */
   margin: 0 auto;
-  top: 240px;
+  top: 330px;
   left: 0;
   right: 0;
   padding: 5px;
@@ -152,6 +152,27 @@ nav li {
 
 #searchResults mark {
   background-color: #dddfdf;
+}
+
+#tags ul {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+#tags li a {
+  display: block;
+  height: 24px;
+  margin: 5px;
+  padding: 0 5px;
+  background-color: #dddfdf;
+  border-radius: 5px;
+  font-size: 14px;
+  /* text-decoration: none; */
 }
 
 #contentsList {

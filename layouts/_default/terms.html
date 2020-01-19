@@ -1,0 +1,13 @@
+{{ define "main"}}
+  <h1>{{ .Title }}</h1>
+  {{ partial "header.html" . }}
+  <!-- tags -->
+  <div id="tags">
+    <ul>
+      {{ range .Site.Taxonomies.tags.ByCount }}
+        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ partial "footer.html" . }}
+{{ end }}

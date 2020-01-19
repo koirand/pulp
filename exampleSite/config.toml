@@ -7,9 +7,6 @@ hasCJKLanguage = true
 # pygmentsUseClasses = true
 # googleAnalytics = "{your tracking code}"
 
-[taxonomies]
-  series = "series"
-
 [params]
     author = "Your Name"
     avatar = "avatar.jpg"
@@ -24,8 +21,10 @@ hasCJKLanguage = true
     # custom_css = ["/css/custom.css"]
     # custom_js = ["/js/custom.js"]
 
+# Make sure setting a following option for search bar to work
 [outputs]
     section = ["JSON", "HTML"]
+    taxonomy = ["JSON", "HTML"]
 
 [[menu.main]]
     identifier = "blog"
