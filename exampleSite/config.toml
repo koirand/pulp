@@ -21,10 +21,6 @@ hasCJKLanguage = true
     # custom_css = ["/css/custom.css"]
     # custom_js = ["/js/custom.js"]
 
-# the pulp support only tags in the taxonomies
-[taxonomies]
-    tags = "tags"
-
 # Make sure setting a following option for search bar to work
 [outputs]
     section = ["JSON", "HTML"]
