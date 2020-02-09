@@ -71,15 +71,13 @@ footer {
 
 nav ul {
   display: flex;
-  justify-content: space-evenly;
-  max-width: 300px;
-  margin: 20px auto;
+  justify-content: center;
   padding: 0;
   list-style: none;
 }
 
 nav li {
-  flex: 1;
+  margin: 0 10px;
 }
 
 /* Contents List */
