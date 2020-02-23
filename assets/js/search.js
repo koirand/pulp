@@ -96,6 +96,7 @@ const initUI = () => {
   $('#searchBoxIcon').click(() => {
     $('#searchBoxInput').val('')
     $('#searchBoxInput').trigger('keyup')
+    $('#searchBoxInput').focus()
   })
 
   // Event when chenging query
@@ -126,6 +127,9 @@ const initUI = () => {
 
   // Emit keyup event for when the query is already setted with browser back etc.
   $('#searchBoxInput').trigger('keyup')
+
+  // Focus at searchBox
+  $('#searchBoxInput').focus()
 }
 
 /**
