@@ -46,3 +46,7 @@ a:active {
 #contentsList hr.separator {
   border: solid 1px #363636;
 }
+
+img.avatar-border {
+  filter: invert(100%);
+}
