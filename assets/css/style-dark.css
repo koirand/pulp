@@ -20,6 +20,10 @@ a:active {
   color: #8f8f8f;
 }
 
+mark {
+  color: #8f8f8f;
+}
+
 #searchBox #searchBoxInput {
   color: #8f8f8f;
   background-color:#363636;

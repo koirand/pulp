@@ -15,6 +15,11 @@ body {
   word-wrap: break-word;
 }
 
+mark {
+  color: #707070;
+  font-weight: bold;
+}
+
 a:link {
   color: #707070;
 }
