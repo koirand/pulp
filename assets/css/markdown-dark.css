@@ -1,0 +1,89 @@
+#contentBody img {
+  box-shadow: 0px 3px 15px rgba(255,255,255,0.2);
+}
+
+#contentBody hr {
+  border-bottom: 1px solid #201d1a;
+}
+
+#contentBody hr {
+  background-color: #1e1b17;
+}
+
+#contentBody blockquote {
+  color: #958c82;
+  border-left: 0.25em solid #201d1a;
+}
+
+#contentBody kbd {
+  color: #bbb2a9;
+  background-color: #050403;
+  border: solid 1px #39342e;
+  border-bottom-color: #6a625a;
+  box-shadow: inset 0 -1px 0 #6a625a;
+}
+
+#contentBody h1 .octicon-link,
+#contentBody h2 .octicon-link,
+#contentBody h3 .octicon-link,
+#contentBody h4 .octicon-link,
+#contentBody h5 .octicon-link,
+#contentBody h6 .octicon-link {
+  color: #e4e0dc;
+}
+
+#contentBody h1 {
+  border-bottom: 1px solid #363636;
+}
+
+#contentBody h2 {
+  border-bottom: 1px solid #363636;
+}
+
+
+#contentBody h6 {
+  font-size: 0.85em;
+  color: #958c82;
+}
+
+#contentBody table th,
+#contentBody table td {
+  padding: 6px 13px;
+  border: 1px solid #363636;
+  background-color: #090909;
+}
+
+#contentBody img {
+  background-color: #090909;
+}
+
+
+#contentBody code {
+  background-color: #090909;
+}
+
+#contentBody .highlight pre,
+#contentBody pre {
+  background-color: #090909;
+}
+
+#contentBody .full-commit .btn-outline:not(:disabled):hover {
+  color: #005cc5;
+  border-color: #005cc5;
+}
+
+#contentBody kbd {
+  color: #bbb2a9;
+  background-color: #050403;
+  border: solid 1px #2e2a25;
+  border-bottom-color: #39342e;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+}
+
+#contentBody :checked+.radio-label {
+  border-color: #0366d6;
+}
+
+#contentBody hr {
+  border-bottom-color: #111;
+}

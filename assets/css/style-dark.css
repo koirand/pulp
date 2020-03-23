@@ -1,0 +1,52 @@
+/* General */
+body {
+  background-color: #101010;
+  color: #8f8f8f;
+}
+
+a:link {
+  color: #8f8f8f;
+}
+
+a:visited {
+  color: #8f8f8f;
+}
+
+a:hover {
+  color: #8f8f8f;
+}
+
+a:active {
+  color: #8f8f8f;
+}
+
+#searchBox #searchBoxInput {
+  color: #8f8f8f;
+  background-color:#363636;
+  border: solid 1px #363636;
+}
+
+#searchBox #searchBoxInput::placeholder {
+  color: #363636;
+}
+
+#searchResults {
+  background-color:#363636;
+  border: solid 1px #363636;
+}
+
+#searchResults mark {
+  background-color: #222020;
+}
+
+#tags li a {
+  background-color: #222020;
+}
+
+#contentsList hr.separator {
+  border: solid 1px #363636;
+}
+
+img.avatar-border {
+  filter: invert(100%);
+}

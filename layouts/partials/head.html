@@ -18,7 +18,11 @@
   {{ $syntaxHighlight := resources.Get "css/syntax-highlight.css" }}
   {{ $css := slice $style $markdown $syntaxHighlight | resources.Concat "style.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
+  {{ $styleDark := resources.Get "css/style-dark.css" }}
+  {{ $markdownDark := resources.Get "css/markdown-dark.css" }}
+  {{ $cssDark := slice $styleDark $markdownDark | resources.Concat "style-dark.css" | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $cssDark.Permalink }}" media="(prefers-color-scheme: dark)" integrity="{{ $cssDark.Data.Integrity }}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
   <!-- custom css -->
   {{ range .Site.Params.custom_css }}
