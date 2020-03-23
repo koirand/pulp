@@ -7,6 +7,9 @@ hasCJKLanguage = true
 # pygmentsUseClasses = true
 # googleAnalytics = "{your tracking code}"
 
+[markup.goldmark.renderer]
+    unsafe = true # Allow user HTML tags
+
 [params]
     author = "Your Name"
     avatar = "avatar.jpg"
