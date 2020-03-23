@@ -5,6 +5,7 @@
   {{ $singlePageDateFormat := .Site.Params.singlePageDateFormat | default "January 2, 2006"}}
   <p class="date">{{ .Date.Format $singlePageDateFormat }}</p>
   <!-- tags -->
+  {{ if .Param "tags" }}
   <div id="tags">
     <ul>
       {{ range .Param "tags" }}
@@ -15,6 +16,8 @@
       {{ end }}
     </ul>
   </div>
+  {{ end }}
+  <h1>{{ .Title }}</h1>
   <!-- content -->
   <div id="contentBody">
     {{ .Content }}
