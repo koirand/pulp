@@ -13,6 +13,7 @@ hasCJKLanguage = true
 [params]
     author = "Your Name"
     avatar = "avatar.jpg"
+    # avatarDescription = "My avatar description"
     favicon = "favicon.ico"
     description = """
         Please write anything here.
