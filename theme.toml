@@ -6,7 +6,7 @@ license = "MIT"
 licenselink = "https://github.com/koirand/pulp/blob/master/LICENSE"
 description = "Pulp is a Hugo theme for getting a simple, easy-to-read blog site."
 tags = ["minimal", "blog", "simple", "light", "personal", "search"]
-min_version = "0.41"
+min_version = "0.73"
 
 [author]
   name = "koirand"
