@@ -5,7 +5,7 @@
   using the <a href="https://github.com/koirand/pulp/">pulp</a> theme.
   </p>
 </footer>
-{{ if .Params.math }}
+{{ if .Params.math .Site.Params.math}}
     {{ partial "mathjax_support.html" . }}
 {{ end }}
 {{- range .Site.Params.custom_js -}}
