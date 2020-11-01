@@ -50,4 +50,9 @@
   {{- if and (not .Site.IsServer) .Site.GoogleAnalytics -}}
   {{ template "_internal/google_analytics_async.html" . }}
   {{- end -}}
+
+  <!-- MathJax -->
+  {{ if or .Params.math .Site.Params.math }}
+    {{ partial "mathjax_support.html" . }}
+  {{ end }}
 </head>
