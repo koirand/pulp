@@ -26,7 +26,7 @@ git clone https://github.com/koirand/pulp.git themes/pulp
 ## Configuration
 
 Configure your config.toml with reference to exampleSite.
-Put your own avatar image in /static/img/avatar.jpg of your own site, and also favicon.ico. Hugo will automatically use that images instead of the standard one. It's not necessary to alter the theme.
+Put your own avatar image in /static/img/avatar.jpg of your own site, and also favicon.ico.  Hugo will automatically use that images instead of the standard one. It's not necessary to alter the theme for that.
 
 ## Update the theme
 You can update the theme by issuing the following command inside your project folder.
