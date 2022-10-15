@@ -5,6 +5,9 @@
   using the <a href="https://github.com/koirand/pulp/">pulp</a> theme.
   </p>
 </footer>
+{{ range .Site.Params.custom_css }}
+<link rel="stylesheet" href="{{ . }}">
+{{ end }}
 {{- range .Site.Params.custom_js -}}
 <script src="{{ . }}"></script>
 {{ end }}
