@@ -22,7 +22,7 @@
   {{ $markdownDark := resources.Get "css/markdown-dark.css" }}
   {{ $cssDark := slice $styleDark $markdownDark | resources.Concat "style-dark.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $cssDark.Permalink }}" media="(prefers-color-scheme: dark)" integrity="{{ $cssDark.Data.Integrity }}">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css">
 
   <!-- custom css -->
   {{ range .Site.Params.custom_css }}
